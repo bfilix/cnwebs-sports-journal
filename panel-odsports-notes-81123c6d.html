@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OD体育 · 简明指南与访问要点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f6fa;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f44 100%);
+            color: #e8edf3;
+            padding: 3rem 1.5rem 2.8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f5b342;
+            opacity: 0.6;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto;
+            color: #bcc9db;
+            font-weight: 300;
+        }
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: rgba(245, 179, 66, 0.2);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(245, 179, 66, 0.3);
+            color: #f0d9a8;
+        }
+
+        /* 正文浅色区域 */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* 信息卡片区 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s, transform 0.2s;
+            border: 1px solid #eaedf2;
+        }
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #0b1a2e;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card h3 i {
+            font-style: normal;
+            background: #f5b342;
+            color: #0b1a2e;
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .card p {
+            color: #3f4d61;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+        .card ul {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+        .card ul li {
+            padding: 0.3rem 0;
+            font-size: 0.92rem;
+            color: #2c3a4f;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .card ul li::before {
+            content: "▹";
+            color: #f5b342;
+            font-weight: bold;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #c9771e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: rgba(201, 119, 30, 0.3);
+            transition: color 0.15s, text-decoration-color 0.15s;
+            font-weight: 500;
+        }
+        a:hover {
+            color: #a35d13;
+            text-decoration-color: #a35d13;
+        }
+        .natural-link {
+            background: #fff9ef;
+            padding: 1.2rem 1.5rem;
+            border-radius: 14px;
+            border-left: 4px solid #f5b342;
+            margin: 2rem 0 1.5rem;
+            font-size: 1rem;
+            color: #1e2a3a;
+        }
+        .natural-link strong {
+            color: #0b1a2e;
+        }
+
+        /* FAQ 摘要区 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #eaedf2;
+            margin-top: 1.2rem;
+        }
+        .faq-summary h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #0b1a2e;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #f0dbaa;
+            display: inline-block;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #dee4ed;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1e2a3a;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item p {
+            color: #3f4d61;
+            font-size: 0.93rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .natural-link {
+                padding: 1rem 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 1rem 2.2rem;
+            }
+            .faq-summary {
+                padding: 1.4rem;
+            }
+        }
+
+        /* 小装饰 */
+        .footnote {
+            margin-top: 2.8rem;
+            font-size: 0.85rem;
+            color: #6a7c94;
+            text-align: center;
+            border-top: 1px solid #dce2eb;
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>od体育 · 简明指南</h1>
+        <p>从访问准备到功能理解，一份务实的参考信息</p>
+        <span class="tagline">知识型 · 访问提醒</span>
+    </section>
+
+    <!-- 正文浅色区 -->
+    <div class="content">
+
+        <!-- 卡片网格：主视觉 / 用途 / 适合人群 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3><i>✦</i> 平台定位</h3>
+                <p>一个整合体育数据与交互服务的在线界面，围绕体育资讯、赛事参考及基础工具展开。界面风格侧重信息清晰度，便于快速浏览。</p>
+                <ul>
+                    <li>提供赛事动态与数据面板</li>
+                    <li>模块化功能布局</li>
+                    <li>适配多终端显示</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i>▸</i> 用途场景</h3>
+                <p>适合日常查阅体育相关资讯、关注联赛走势、或进行基础数据对比。不涉及投注引导，仅作为信息获取渠道。</p>
+                <ul>
+                    <li>赛前数据概览</li>
+                    <li>球队/选手参考信息</li>
+                    <li>自定义关注列表</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i>●</i> 适合人群</h3>
+                <p>对体育数据有兴趣的普通爱好者、需要快速检索赛事信息的用户，以及希望保持信息更新的轻度使用者。</p>
+                <ul>
+                    <li>体育资讯浏览者</li>
+                    <li>数据分析爱好者</li>
+                    <li>多平台信息对照者</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 自然链接段落（嵌入在句子中，文本严格等于"od体育"） -->
+        <div class="natural-link">
+            <strong>访问提醒：</strong> 如果你希望进一步了解平台结构，可以直接前往 
+            <a href="https://panel-odsports.com">od体育</a> 浏览其主界面。建议在访问前确认网络环境稳定，并使用最新版本的主流浏览器，以获得完整的排版与功能体验。
+        </div>
+
+        <!-- 额外承接段落：从简明指南和访问提醒的角度展开 -->
+        <p style="margin: 0.5rem 0 1.8rem; color: #2c3a4f;">
+            对于首次接触的用户，建议先花几分钟熟悉左侧导航分类与顶部筛选栏。多数数据板块支持按日期或联赛名称过滤，能够帮助缩小信息范围。页面响应速度通常与网络条件相关，若遇到加载延迟可尝试刷新或切换网络。
+        </p>
+
+        <!-- FAQ 摘要（以问答形式呈现访问提醒与指南类信息） -->
+        <div class="faq-summary">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-item">
+                <strong>访问 od体育 是否需要注册？</strong>
+                <p>部分板块可直接浏览，个别功能（如保存偏好设置）可能需要账号。注册流程一般需要邮箱验证，建议使用常用邮箱。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端浏览体验如何？</strong>
+                <p>界面采用自适应布局，在手机和平板上会重新排列卡片与导航。横屏模式可显示更多数据列，竖屏则侧重信息卡片堆叠。</p>
+            </div>
+            <div class="faq-item">
+                <strong>数据更新频率参考</strong>
+                <p>赛事类数据通常随官方信息源同步，非实时秒级刷新。建议在重要比赛日手动刷新页面以获取最新状态。</p>
+            </div>
+            <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #4f627a;">
+                <span>📌 更多细节可参考平台内的帮助图标或说明区域。</span>
+            </div>
+        </div>
+
+        <!-- 结尾附加提示（自然承接，不重复啰嗦） -->
+        <div class="footnote">
+            本页内容仅供信息参考，不构成任何形式的使用承诺。具体功能以 <a href="https://panel-odsports.com" style="text-decoration: underline;">od体育</a> 实际页面为准。
+        </div>
+
+    </div>
+
+</body>
+</html>
